@@ -92,6 +92,7 @@ const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
                 return  (
                     <Input
                     placeholder={`Filter ${filter}`}
+                    key={filter}
                     value={(table.getColumn(filter)?.getFilterValue() as string) ?? ""}
                     onChange={(event) =>
                         table.getColumn(filter)?.setFilterValue(event.target.value)

@@ -9,7 +9,7 @@ import { Property, columns as columns2 } from './columns2';
 
 export default function Home() {
   const { user, error, isLoading } = useUser();
-  const [row,setRow] = useState<Payment>()
+  const [row,setRow] = useState<Property>()
   const [selectedRows, setSelectedRows] = useState<Property[]>([])
   function getData() {
     // Fetch data from your API here.
@@ -42,8 +42,10 @@ export default function Home() {
   },[user])
 
   useEffect(()=>{
+    if (row){
+      console.log("rows",row)
+    }
     
-    console.log("rows",row)
   },[row])
 
   useEffect(()=>{
